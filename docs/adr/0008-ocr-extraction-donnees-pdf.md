@@ -10,12 +10,12 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit extraire automatiquement les informations utiles des factures PDF, y compris lorsque le document est scanné et non directement exploitable en texte.
+L'application doit extraire automatiquement les informations utiles des documents PDF (factures, devis, etc.), y compris lorsque le document est scanné et non directement exploitable en texte.
 
 La solution OCR doit gérer :
 
 - la reconnaissance du texte dans différents formats de PDF
-- l'extraction de champs clés (date, montant, fournisseur)
+- l'extraction de champs clés adaptés au type de document (ex : date, montant, fournisseur)
 - une qualité de lecture suffisante pour limiter les corrections manuelles
 - l'intégration simple avec le pipeline de traitement
 
@@ -37,7 +37,7 @@ La solution OCR doit gérer :
 
 **Avantages** :
 
-- Bonne précision sur les documents de type facture
+- Bonne précision sur plusieurs types de documents PDF
 - Extraction structurée de champs
 - Intégration naturelle avec l'écosystème AWS
 
@@ -48,7 +48,7 @@ La solution OCR doit gérer :
 
 ## Décision
 
-**L'OCR des factures PDF est réalisé avec Amazon Textract.**
+**L'OCR des documents PDF (factures, devis, etc.) est réalisé avec Amazon Textract.**
 
 Choix retenu de manière explicite :
 
@@ -59,7 +59,7 @@ Choix retenu de manière explicite :
 
 ## Conséquences
 
-- La qualité d'extraction s'améliore sur les factures variées, y compris scannées.
+- La qualité d'extraction s'améliore sur des documents PDF variés, y compris scannés.
 - Le projet dépend du service AWS Textract et de sa tarification à l'usage.
 - Un contrôle qualité des sorties OCR reste nécessaire sur les cas ambigus.
 - Le pipeline doit gérer les erreurs OCR et les documents non exploitables.

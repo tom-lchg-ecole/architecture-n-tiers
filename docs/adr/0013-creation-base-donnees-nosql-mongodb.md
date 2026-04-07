@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit stocker des donnees facture heterogenes issues de l'OCR et des traitements IA, avec des champs pouvant evoluer dans le temps.
+L'application doit stocker des donnees documentaires heterogenes issues de l'OCR et des traitements IA, avec des champs pouvant evoluer dans le temps.
 
 La base de donnees doit gerer :
 
@@ -54,7 +54,7 @@ Choix retenu de maniere explicite :
 
 - SGBD : MongoDB
 - format de stockage : documents BSON (JSON)
-- perimetre : metadonnees facture, resultats OCR/IA, references de fichiers S3
+- perimetre : metadonnees des documents PDF, resultats OCR/IA, references de fichiers S3
 - schema : flexible mais contraint par des validations applicatives cote backend
 
 ## Consequences

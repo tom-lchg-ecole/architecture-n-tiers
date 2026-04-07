@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-Le serveur doit rester fiable a chaque changement de logique metier, en particulier sur le traitement des donnees facture, les validations et les integrations techniques.
+Le serveur doit rester fiable a chaque changement de logique metier, en particulier sur le traitement des donnees documentaires PDF, les validations et les integrations techniques.
 
 La strategie de tests unitaires doit gerer :
 

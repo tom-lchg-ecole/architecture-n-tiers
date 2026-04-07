@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-Les donnees OCR brutes peuvent contenir du bruit, des champs incoherents et une structure variable selon les factures.
+Les donnees OCR brutes peuvent contenir du bruit, des champs incoherents et une structure variable selon les types de documents PDF.
 
 Le composant de post-traitement doit gerer :
 

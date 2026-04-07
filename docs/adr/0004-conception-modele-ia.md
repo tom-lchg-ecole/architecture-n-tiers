@@ -10,13 +10,13 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit catégoriser automatiquement les factures à partir de leur contenu pour réduire le traitement manuel.
+L'application doit catégoriser automatiquement les documents PDF (factures, devis, etc.) à partir de leur contenu pour réduire le traitement manuel.
 
 Le modèle d'IA doit gérer :
 
-- l'analyse du texte extrait des factures
-- la proposition d'une catégorie pertinente
-- l'adaptation aux nouveaux types de factures
+- l'analyse du texte extrait des documents PDF
+- la proposition d'une catégorie pertinente pour identifier le type de document
+- l'adaptation aux nouveaux types de documents
 - une précision suffisante pour être utile en production
 
 ## Options considérées pour le modèle d'IA
@@ -48,13 +48,13 @@ Le modèle d'IA doit gérer :
 
 ## Décision
 
-**La catégorisation est réalisée avec un modèle de machine learning supervisé, entraîné sur des factures annotées.**
+**La catégorisation est réalisée avec un modèle de machine learning supervisé, entraîné sur des documents PDF annotés (factures, devis, etc.).**
 
 Choix retenu de manière explicite :
 
 - type de modèle : classification supervisée
-- entrée : texte extrait des factures (pipeline OCR)
-- sortie : catégorie métier prédite pour chaque facture
+- entrée : texte extrait des documents PDF (pipeline OCR)
+- sortie : type de document prédit (facture, devis, etc.) puis catégorie métier associée
 - cycle de vie : entraînement initial + réentraînements sur données internes validées
 
 ## Conséquences

@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit conserver les fichiers PDF de factures de manière fiable, sécurisée et accessible depuis l'interface.
+L'application doit conserver les fichiers PDF de différents types de documents (factures, devis, etc.) de manière fiable, sécurisée et accessible depuis l'interface.
 
 Le système de stockage doit gérer :
 
@@ -50,12 +50,12 @@ Le système de stockage doit gérer :
 
 ## Décision
 
-**Les factures PDF sont stockées dans un bucket Amazon S3 dédié au projet.**
+**Les documents PDF (factures, devis, etc.) sont stockés dans un bucket Amazon S3 dédié au projet.**
 
 Choix retenu de manière explicite :
 
 - service de stockage : Amazon S3
-- objet stocké : fichiers PDF originaux des factures
+- objet stocké : fichiers PDF originaux des documents traités
 - sécurité : accès via IAM et URLs signées pour téléchargement/visualisation
 - application : seules les métadonnées et la clé S3 sont conservées en base MongoDB
 

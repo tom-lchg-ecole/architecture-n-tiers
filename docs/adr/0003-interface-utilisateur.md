@@ -10,13 +10,13 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit proposer une interface simple pour permettre aux utilisateurs d'importer, classer et consulter leurs factures sans complexité technique.
+L'application doit proposer une interface simple pour permettre aux utilisateurs d'importer, classer et consulter leurs documents PDF (factures, devis, etc.) sans complexité technique.
 
 L'interface doit gérer :
 
-- l'envoi de factures en lot ou unitaire
+- l'envoi de documents PDF en lot ou unitaire
 - la visualisation des informations extraites
-- la recherche et le filtrage des factures
+- la recherche et le filtrage des documents selon leur type
 - l'accès au téléchargement des fichiers
 
 ## Options considérées

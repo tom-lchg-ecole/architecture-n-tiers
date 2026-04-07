@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-L'application de gestion de factures doit proteger l'acces aux donnees sensibles et limiter les actions selon le profil utilisateur.
+L'application de gestion de documents PDF doit proteger l'acces aux donnees sensibles et limiter les actions selon le profil utilisateur.
 
 Le mecanisme d'authentification doit assurer :
 

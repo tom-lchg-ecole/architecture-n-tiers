@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte
 
-Créer une application de gestion de factures avec catégorisation automatique par IA et remplissage des champs.
+Créer une application de gestion de documents PDF (factures, devis, etc.) avec catégorisation automatique par IA et remplissage des champs.
 
 ## Options considérées
 
@@ -26,11 +26,11 @@ Créer une application de gestion de factures avec catégorisation automatique p
 - Forte charge manuelle de saisie et de classement
 - Peu de valeur métier sur l'automatisation
 
-### Option 2 : Application de gestion de factures avec OCR, IA et contrôle d'accès
+### Option 2 : Application de gestion de documents PDF avec OCR, IA et contrôle d'accès
 
 **Avantages** :
 
-- Réduction du temps de traitement des factures
+- Réduction du temps de traitement des documents PDF
 - Standardisation des données extraites
 - Sécurisation de l'accès aux informations financières
 
@@ -41,12 +41,12 @@ Créer une application de gestion de factures avec catégorisation automatique p
 
 ## Décision
 
-**Le projet met en place une application de gestion de factures avec extraction OCR, catégorisation IA et authentification par rôles.**
+**Le projet met en place une application de gestion de documents PDF avec extraction OCR, catégorisation IA et authentification par rôles.**
 
 Choix retenu de manière explicite :
 
-- périmètre : import, consultation, recherche, téléchargement et gestion des factures
-- automatisation : extraction des données PDF et catégorisation automatique
+- périmètre : import, consultation, recherche, téléchargement et gestion de documents PDF variés (factures, devis, etc.)
+- automatisation : extraction des données PDF et catégorisation automatique pour identifier le type de document traité
 - sécurité : authentification et contrôle d'accès selon les rôles
 - architecture : séparation front-end, backend, stockage documentaire et traitement IA
 
@@ -59,20 +59,20 @@ Choix retenu de manière explicite :
 
 ## Objectif
 
-Améliorer, simplifier et faire gagner du temps sur l'organisation des factures d'une entreprise.
+Améliorer, simplifier et faire gagner du temps sur l'organisation des documents d'une entreprise.
 
 ## Fonctionnalités attendues
 
-### Gestion des factures
+### Gestion des documents PDF
 
-- Envoi de factures multiples
+- Envoi de documents PDF multiples
 - Glisser-déposer
-- Téléchargement des factures
-- CRUD des factures
+- Téléchargement des documents PDF
+- CRUD des documents PDF
 
 ### Catégorisation
 
-- Factures automatiquement catégorisées en fonction de leur contenu
+- Documents PDF automatiquement catégorisés en fonction de leur contenu (facture, devis, etc.)
 
 ### Authentification
 

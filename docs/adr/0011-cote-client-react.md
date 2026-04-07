@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-L'application necessite une interface web dynamique pour gerer l'import des factures, la consultation des donnees et les interactions utilisateur en temps reel.
+L'application necessite une interface web dynamique pour gerer l'import de documents PDF (factures, devis, etc.), la consultation des donnees et les interactions utilisateur en temps reel.
 
 Le framework front-end doit gerer :
 

@@ -53,7 +53,7 @@ La strategie de test E2E doit gerer :
 Choix retenu de maniere explicite :
 
 - framework de tests E2E : Playwright
-- parcours couverts : upload facture, consultation, recherche, telechargement
+- parcours couverts : upload de document PDF, consultation, recherche, telechargement
 - execution : automatique dans GitHub Actions
 - diagnostic : traces, captures d'ecran et videos en cas d'echec
 

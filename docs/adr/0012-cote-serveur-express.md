@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-Le back-end doit exposer des APIs pour gerer les factures, orchestrer les traitements OCR/IA et communiquer avec la base de donnees et le stockage des fichiers.
+Le back-end doit exposer des APIs pour gerer les documents PDF (factures, devis, etc.), orchestrer les traitements OCR/IA et communiquer avec la base de donnees et le stockage des fichiers.
 
 Le framework serveur doit gerer :
 

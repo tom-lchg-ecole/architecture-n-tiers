@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-L'application doit couvrir plusieurs domaines fonctionnels (gestion des factures, catégorisation IA, stockage des fichiers) avec des besoins d'évolution différents.
+L'application doit couvrir plusieurs domaines fonctionnels (gestion des documents PDF, catégorisation IA, stockage des fichiers) avec des besoins d'évolution différents.
 
 L'architecture doit gérer :
 

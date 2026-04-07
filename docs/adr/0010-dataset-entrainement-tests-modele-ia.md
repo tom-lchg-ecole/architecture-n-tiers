@@ -10,7 +10,7 @@ Approuvé
 
 ## Contexte et problème
 
-Le modele IA de traitement des factures doit etre entraine et evalue sur des donnees representatives pour garantir des resultats fiables en production.
+Le modele IA de traitement des documents PDF doit etre entraine et evalue sur des donnees representatives pour garantir des resultats fiables en production.
 
 La strategie data doit gerer :
 
@@ -38,7 +38,7 @@ La strategie data doit gerer :
 **Avantages** :
 
 - Base initiale rapide grace aux sources publiques
-- Meilleure representativite via des factures reelles anonymisees
+- Meilleure representativite via des documents reels anonymises (factures, devis, etc.)
 - Qualite controlee avec un schema cible unique
 
 **Inconvenients** :
@@ -53,7 +53,7 @@ La strategie data doit gerer :
 Choix retenu de maniere explicite :
 
 - source 1 : data-sets publics pour initialiser l'entrainement
-- source 2 : factures internes anonymisees, annotees selon le schema JSON cible
+- source 2 : documents PDF internes anonymises, annotes selon le schema JSON cible
 - gouvernance data : separation obligatoire entrainement/validation/test
 - qualite : validation du modele sur un jeu de test gele representatif du contexte metier
 
@@ -68,12 +68,12 @@ Choix retenu de maniere explicite :
 
 Sources de data-set :
 
-- Sources publiques de documents OCR/factures pour initialiser les experiments
-- Factures internes anonymisees pour couvrir les cas metiers cibles
+- Sources publiques de documents OCR/PDF pour initialiser les experiments
+- Documents internes anonymises pour couvrir les cas metiers cibles
 
 Si aucun data-set adequat n'est disponible :
 
-- Collecter un lot de factures reelles representatif
+- Collecter un lot de documents reels representatif
 - Anonymiser toutes les donnees sensibles
 - Definir un guide d'annotation (champs obligatoires, formats, regles)
 - Annoter manuellement puis faire une revue qualite par echantillonnage

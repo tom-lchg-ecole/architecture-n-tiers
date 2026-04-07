@@ -52,7 +52,7 @@ Choix retenu de manière explicite :
 
 - moteur : MongoDB
 - modèle : collections de documents JSON/BSON
-- usage : stockage des métadonnées de factures, données OCR/IA et liens vers PDF
+- usage : stockage des métadonnées des documents PDF, données OCR/IA et liens vers PDF
 - accès applicatif : via le backend Express/TypeScript
 
 ## Conséquences
