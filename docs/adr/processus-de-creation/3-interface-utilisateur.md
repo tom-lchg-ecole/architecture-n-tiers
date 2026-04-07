@@ -1,0 +1,58 @@
+# ADR-3 : Conception de l'interface utilisateur
+
+## Date
+
+07/04/2026
+
+## Status
+
+Approuvé
+
+## Contexte et problème
+
+L'application doit proposer une interface simple pour permettre aux utilisateurs d'importer, classer et consulter leurs factures sans complexité technique.
+
+L'interface doit gérer :
+
+- l'envoi de factures en lot ou unitaire
+- la visualisation des informations extraites
+- la recherche et le filtrage des factures
+- l'accès au téléchargement des fichiers
+
+## Options considérées
+
+### Option 1 : Interface multi-pages classique
+
+**Avantages** :
+
+- Structure claire
+- Mise en place rapide
+
+**Inconvénients** :
+
+- Navigation moins fluide
+- Expérience utilisateur plus fragmentée
+
+### Option 2 : Interface web moderne orientée composants
+
+**Avantages** :
+
+- Navigation fluide
+- Réutilisation des composants
+- Maintenance facilitée
+
+**Inconvénients** :
+
+- Mise en place initiale plus longue
+- Besoin d'une organisation stricte des composants
+
+## Décision
+
+**Utilisation d'une interface web moderne orientée composants**
+
+Raisons principales :
+
+- meilleure expérience utilisateur
+- composants réutilisables
+- évolution plus simple des écrans
+- cohérence visuelle sur l'ensemble de l'application

@@ -1,0 +1,62 @@
+# ADR-7 : Selection des langages et frameworks cote client et serveur
+
+## Date
+
+07/04/2026
+
+## Status
+
+Approuvé
+
+## Contexte et problème
+
+L'application nécessite un socle technique cohérent entre le front-end et le back-end pour accélérer le développement et faciliter la maintenance.
+
+Le choix des technologies doit gérer :
+
+- la productivité de l'équipe de développement
+- la maintenabilité du code sur le long terme
+- la performance côté client et serveur
+- l'intégration avec les services prévus (IA, base de données, stockage)
+
+## Options considérées pour les langages et frameworks
+
+### Option 1 : JavaScript (React + Express)
+
+**Avantages** :
+
+- Écosystème large
+- Développement rapide
+- Même langage côté client et serveur
+- Équipe déjà formé
+
+**Inconvénients** :
+
+- Typage faible sans couche supplémentaire
+- Risque d'erreurs détectées tardivement
+
+### Option 2 : TypeScript (React + NestJS)
+
+**Avantages** :
+
+- Typage statique
+- Meilleure robustesse du code
+- Architecture back-end structurée
+- Réutilisation des types entre client et serveur
+
+**Inconvénients** :
+
+- Courbe d'apprentissage plus élevée
+- Temps de configuration initial plus important
+- L'équipe ne connaît pas
+
+## Décision
+
+**Utilisation de TypeScript avec React côté client et Express côté serveur**
+
+Raisons principales :
+
+- équipe déjà formé
+- cohérence technique sur l'ensemble de la stack
+- maintenance facilitée grâce au typage
+- productivité durable pour les évolutions futures
