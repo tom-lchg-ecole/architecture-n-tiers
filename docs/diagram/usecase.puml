@@ -1,0 +1,75 @@
+@startuml usecase
+
+left to right direction
+
+actor "Utilisateur" as User
+actor "Administrateur" as Admin
+
+rectangle "Système de gestion de documents" {
+
+    package "Authentification" {
+        usecase "S'inscrire" as UC_Register
+        usecase "Se connecter" as UC_Login
+        usecase "Se déconnecter" as UC_Logout
+        usecase "Mettre à jour le profil" as UC_UpdateProfile
+    }
+
+    package "Gestion des documents" {
+        usecase "Téléverser un document" as UC_Upload
+        usecase "Téléverser en lot" as UC_BatchUpload
+        usecase "Consulter la liste des documents" as UC_ListInvoices
+        usecase "Consulter le détail d'une documents" as UC_ViewDetail
+        usecase "Modifier une documents" as UC_UpdateInvoice
+        usecase "Supprimer une documents" as UC_DeleteInvoice
+        usecase "Télécharger le PDF" as UC_DownloadPDF
+        usecase "Prévisualiser le PDF" as UC_PreviewPDF
+    }
+
+    package "Recherche & Statistiques" {
+        usecase "Rechercher des documents" as UC_Search
+        usecase "Filtrer par catégorie / date / fournisseur" as UC_Filter
+    }
+
+    package "Traitement & Surveillance" {
+        usecase "Suivre le statut de traitement" as UC_TrackStatus
+        usecase "Consulter les erreurs de traitement" as UC_ViewErrors
+    }
+
+    package "Administration" {
+        usecase "Gérer les utilisateurs" as UC_ManageUsers
+        usecase "Surveiller les logs / monitoring" as UC_Monitoring
+    }
+}
+
+' Utilisateur
+User --> UC_Login
+User --> UC_Register
+User --> UC_Logout
+User --> UC_UpdateProfile
+User --> UC_Upload
+User --> UC_BatchUpload
+User --> UC_ListInvoices
+User --> UC_ViewDetail
+User --> UC_UpdateInvoice
+User --> UC_DeleteInvoice
+User --> UC_DownloadPDF
+User --> UC_PreviewPDF
+User --> UC_Search
+User --> UC_Filter
+User --> UC_TrackStatus
+User --> UC_ViewErrors
+
+' Administrateur hérite de l'utilisateur
+Admin --|> User
+Admin --> UC_ManageUsers
+Admin --> UC_Monitoring
+
+' Relations include / extend
+UC_Upload ..> UC_TrackStatus : <<include>>
+UC_BatchUpload ..> UC_TrackStatus : <<include>>
+UC_ViewDetail ..> UC_DownloadPDF : <<extend>>
+UC_ViewDetail ..> UC_PreviewPDF : <<extend>>
+UC_ListInvoices ..> UC_Filter : <<extend>>
+UC_ListInvoices ..> UC_Search : <<extend>>
+
+@enduml

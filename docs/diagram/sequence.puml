@@ -1,0 +1,47 @@
+@startuml sequence
+
+title Téléversement et traitement d'une facture
+
+actor "Utilisateur" as User
+participant "React UI" as UI
+participant "Express API" as API
+participant "MongoDB\n(SQL + Mongo)" as DB
+participant "AWS S3" as S3
+participant "AWS Textract\n(OCR)" as Textract
+participant "Modèle IA\nNettoyage" as AICleaning
+participant "Modèle IA\nCatégorisation" as AICateg
+
+== Téléversement ==
+
+User -> UI : Sélectionne un fichier PDF
+UI -> API : POST /api/invoices/upload\n[Authorization: Bearer <token>]
+API -> API : Valide le JWT et le fichier
+API -> S3 : Téléverse le PDF
+S3 --> API : URL S3 du fichier
+API -> DB : Crée un enregistrement Documents\n(status = "pending")
+API --> UI : { documentId, status: "pending" }
+
+== Traitement OCR ==
+
+API -> Textract : Lance l'extraction OCR\n(référence S3)
+Textract --> API : Données brutes OCR (JSON)
+API -> DB : Stocke en raw_zone (MongoDB)\n(raw_textract_output)
+
+== Nettoyage & Normalisation IA ==
+
+API -> AICleaning : Envoie le JSON brut OCR
+AICleaning --> API : Données nettoyées\n(invoice_number, date, supplier, amount…)
+API -> API : Valide les données extraites
+
+== Catégorisation IA ==
+
+API -> AICateg : Envoie les données nettoyées
+AICateg --> API : { category, confidence_score }
+API -> DB : Stocke en processed_zone (MongoDB)\n(données nettoyées + catégorie)
+
+== Résultat ==
+
+API --> UI : { status: "completed", extractedData, category, confidence }
+UI --> User : Affiche la facture traitée\navec les champs extraits et la catégorie
+
+@enduml
