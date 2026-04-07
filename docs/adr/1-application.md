@@ -28,3 +28,9 @@ Améliorer, simplifier et faire gagner du temps sur l'organisation des factures 
 ### Catégorisation
 
 - Factures automatiquement catégorisées en fonction de leur contenu
+
+### Authentification
+
+- Connexion sécurisée des utilisateurs
+- Gestion des sessions et déconnexion
+- Contrôle d'accès selon les rôles (administrateur, utilisateur)
