@@ -49,11 +49,11 @@ L'organisation de reponse aux incidents doit gerer :
 
 ## Decision
 
-**Utilisation d'un processus formalise de gestion d'incidents avec runbooks**
+**La gestion d'incidents suit un processus formalise avec runbooks operationnels et post-mortems.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- reduire le temps moyen de resolution
-- standardiser la reponse operationnelle
-- ameliorer la fiabilite globale du service
-- capitaliser sur chaque incident pour progresser
+- runbooks : procedure pas-a-pas pour incidents API, OCR/IA, base et stockage
+- pilotage incident : qualification, priorisation, escalation et communication
+- cloture : post-mortem systematique avec plan d'actions
+- capitalisation : mise a jour continue de la documentation d'exploitation

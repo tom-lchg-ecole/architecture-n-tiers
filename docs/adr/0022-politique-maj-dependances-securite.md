@@ -49,11 +49,11 @@ La politique de maintenance securite doit gerer :
 
 ## Decision
 
-**Utilisation d'une politique de mises a jour planifiees avec controle securite**
+**Les dependances sont gerees avec une politique de mise a jour planifiee et controle securite systematique.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- limiter l'exposition aux failles connues
-- maintenir une base technique saine
-- reduire les risques de migration tardive
-- renforcer la fiabilite de la plateforme dans le temps
+- frequence : revues periodiques des dependances front-end, backend et CI/CD
+- securite : scans automatiques de vulnerabilites (npm audit / outils GitHub)
+- priorisation : correctifs critiques traites en priorite
+- validation : execution des tests avant fusion de toute mise a jour

@@ -48,11 +48,11 @@ La strategie de test E2E doit gerer :
 
 ## Decision
 
-**Utilisation de Playwright pour les tests E2E de l'interface utilisateur**
+**Les tests E2E de l'interface sont implementes avec Playwright.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- couverture fiable des parcours critiques
-- execution efficace en CI sur plusieurs navigateurs
-- outillage de diagnostic tres utile en cas d'echec
-- bonne maintenabilite de la suite de tests sur le long terme
+- framework de tests E2E : Playwright
+- parcours couverts : upload facture, consultation, recherche, telechargement
+- execution : automatique dans GitHub Actions
+- diagnostic : traces, captures d'ecran et videos en cas d'echec

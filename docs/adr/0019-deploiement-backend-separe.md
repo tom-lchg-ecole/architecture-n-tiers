@@ -49,11 +49,11 @@ La strategie de deploiement serveur doit gerer :
 
 ## Decision
 
-**Utilisation d'un deploiement backend separe du front-end**
+**Le backend est deploye separement du front-end, avec son propre cycle de livraison.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- augmenter la resilience globale de la plateforme
-- permettre une scalabilite independante des services serveur
-- decoupler les rythmes de deploiement front-end/back-end
-- renforcer la maitrise des contraintes de securite cote API
+- unites de deploiement distinctes : front-end React et API Express
+- scalabilite : backend ajustable independamment selon la charge API/OCR/IA
+- exploitation : supervision backend dediee (logs, metriques, alertes)
+- securite : configuration reseau et secrets backend isoles du front-end

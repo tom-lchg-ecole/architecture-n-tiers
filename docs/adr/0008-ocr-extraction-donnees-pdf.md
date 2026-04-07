@@ -48,11 +48,11 @@ La solution OCR doit gérer :
 
 ## Décision
 
-**Utilisation d'AWS Textract pour l'extraction OCR des PDF**
+**L'OCR des factures PDF est réalisé avec Amazon Textract.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- meilleure fiabilité d'extraction sur les factures
-- sortie structurée facilitant le traitement applicatif
-- intégration cohérente avec le choix AWS S3
-- réduction du temps de post-traitement manuel
+- service OCR : Amazon Textract
+- périmètre : extraction texte et champs depuis PDF natifs ou scannés
+- sortie : données OCR structurées au format JSON
+- intégration : traitement en entrée du pipeline IA et stockage des PDF sur S3

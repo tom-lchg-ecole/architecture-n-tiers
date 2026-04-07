@@ -48,11 +48,11 @@ Le pipeline release doit gerer :
 
 ## Decision
 
-**Utilisation d'un pipeline GitHub Actions avec release.yml**
+**La creation des releases est automatisee avec GitHub Actions via le workflow `release.yml`.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- fiabiliser la creation des releases
-- accelerer la publication des versions
-- harmoniser le versioning du projet
-- ameliorer la tracabilite des livraisons logicielles
+- outil : GitHub Actions
+- fichier de workflow : `.github/workflows/release.yml`
+- declenchement : publication depuis un tag/version Git
+- resultat : creation de release GitHub et publication des artefacts associes

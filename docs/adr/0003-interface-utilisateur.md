@@ -48,11 +48,11 @@ L'interface doit gérer :
 
 ## Décision
 
-**Utilisation d'une interface web moderne orientée composants**
+**L'interface utilisateur est réalisée en React.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- meilleure expérience utilisateur
-- composants réutilisables
-- évolution plus simple des écrans
-- cohérence visuelle sur l'ensemble de l'application
+- framework front-end : React
+- approche UI : single-page application (SPA) responsive
+- structuration : composants partagés (écrans, formulaires, tableaux, filtres)
+- intégration : appels API REST vers le backend Express

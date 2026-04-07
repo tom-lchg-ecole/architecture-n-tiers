@@ -48,11 +48,11 @@ La strategie de tests unitaires doit gerer :
 
 ## Decision
 
-**Mise en place de tests unitaires dedies cote serveur**
+**Les tests unitaires du backend sont obligatoires et executes automatiquement sur chaque modification serveur.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- fiabiliser la logique metier avant integration complete
-- reduire le cout de correction des regressions
-- accelerer le feedback pendant le developpement
-- completer efficacement la pyramide de tests du projet
+- perimetre : services metier, validateurs, utilitaires backend
+- principe : isolation des dependances externes avec mocks
+- execution : locale et dans le pipeline CI
+- objectif : proteger la logique metier avant tests d'integration et E2E

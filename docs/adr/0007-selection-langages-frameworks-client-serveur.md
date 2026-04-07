@@ -52,11 +52,11 @@ Le choix des technologies doit gérer :
 
 ## Décision
 
-**Utilisation de TypeScript avec React côté client et Express côté serveur**
+**La stack applicative retenue est TypeScript + React pour le client et TypeScript + Express pour le serveur.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- équipe déjà formé
-- cohérence technique sur l'ensemble de la stack
-- maintenance facilitée grâce au typage
-- productivité durable pour les évolutions futures
+- langage principal : TypeScript (front-end et back-end)
+- framework client : React
+- framework serveur : Express
+- objectif : partage des types et cohérence de la base de code sur toute la stack

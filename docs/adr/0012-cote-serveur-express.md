@@ -48,11 +48,11 @@ Le framework serveur doit gerer :
 
 ## Decision
 
-**Utilisation d'Express pour le cote serveur**
+**Le backend API est developpe avec Express et TypeScript.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- mise en place rapide des APIs metier
-- flexibilite adaptee au projet
-- ecosysteme mature pour les integrations necessaires
-- maintenance simple avec une convention de structure claire
+- framework serveur : Express
+- langage : TypeScript
+- style d'API : REST
+- responsabilites : orchestration OCR/IA, acces MongoDB, acces S3, authentification JWT

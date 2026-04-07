@@ -49,11 +49,11 @@ L'architecture doit gérer :
 
 ## Décision
 
-**Utilisation d'une architecture microservices**
+**L'architecture retenue est une architecture microservices, avec services déployables indépendamment.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- meilleure séparation des responsabilités
-- évolution indépendante des services
-- scalabilité adaptée aux besoins réels de chaque composant
-- meilleure maintenabilité sur le long terme
+- découpage : service API métier, service OCR/IA, service de gestion documentaire
+- communication : API HTTP internes entre services
+- déploiement : chaque service versionné et déployé séparément
+- données : MongoDB et S3 partagés via contrats d'accès définis

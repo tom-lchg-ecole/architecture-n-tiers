@@ -49,11 +49,11 @@ Le mecanisme d'authentification doit assurer :
 
 ## Decision
 
-**Utilisation de JWT avec refresh token et controle d'acces par role**
+**Le mecanisme d'authentification retenu est JWT (access token) avec refresh token, et autorisation par roles (RBAC).**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- integration fluide avec le back-end Express et les APIs REST
-- support des clients web, mobile et tablette
-- separation claire entre authentification et autorisation
-- evolution simple vers des besoins de scalabilite
+- authentification : JSON Web Token signe cote backend Express
+- gestion de session : refresh token pour renouveler les access tokens
+- autorisation : controle d'acces par role (administrateur, utilisateur)
+- transport : token transmis dans les appels API REST securises

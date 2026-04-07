@@ -48,11 +48,11 @@ Le modèle d'IA doit gérer :
 
 ## Décision
 
-**Utilisation d'un modèle de machine learning supervisé**
+**La catégorisation est réalisée avec un modèle de machine learning supervisé, entraîné sur des factures annotées.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- meilleure qualité de catégorisation
-- capacité d'apprentissage sur les données réelles
-- adaptation plus simple à l'évolution des formats de factures
-- réduction des corrections manuelles dans le temps
+- type de modèle : classification supervisée
+- entrée : texte extrait des factures (pipeline OCR)
+- sortie : catégorie métier prédite pour chaque facture
+- cycle de vie : entraînement initial + réentraînements sur données internes validées

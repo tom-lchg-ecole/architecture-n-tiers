@@ -49,11 +49,11 @@ La strategie de supervision doit gerer :
 
 ## Decision
 
-**Utilisation d'une solution de monitoring et logging centralises**
+**Le projet adopte une plateforme centralisee pour le monitoring et le logging de tous les services.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- accelerer la detection des incidents
-- reduire le temps moyen de resolution
-- fiabiliser le suivi de la qualite de service
-- faciliter la maintenance de l'architecture distribuee
+- perimetre : front-end, backend, pipeline OCR/IA et integrations stockage
+- donnees collectees : logs applicatifs, metriques techniques, erreurs
+- exploitation : tableaux de bord et alertes centralises
+- objectif operationnel : detection rapide des incidents et diagnostic unifie

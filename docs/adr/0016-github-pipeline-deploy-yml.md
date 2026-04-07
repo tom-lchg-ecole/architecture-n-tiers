@@ -49,11 +49,11 @@ Le pipeline de deploiement doit gerer :
 
 ## Decision
 
-**Utilisation d'un pipeline GitHub Actions avec deploy.yml**
+**Le deploiement est automatise avec GitHub Actions via le workflow `deploy.yml`.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- fiabiliser le deploiement
-- reduire les interventions manuelles
-- accelerer la mise en production
-- garantir la tracabilite complete des livraisons
+- outil CI/CD : GitHub Actions
+- fichier de workflow : `.github/workflows/deploy.yml`
+- etapes minimales : build, tests, puis deploiement cible
+- securite : secrets de deploiement geres dans GitHub Secrets

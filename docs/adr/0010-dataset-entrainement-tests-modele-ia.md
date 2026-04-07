@@ -48,14 +48,14 @@ La strategie data doit gerer :
 
 ## Decision
 
-**Utilisation d'une approche hybride pour constituer le data-set**
+**Le data-set du modele IA est construit avec une approche hybride : jeux publics + jeu interne annote.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- demarrer vite avec des data-sets publics de documents/factures
-- completer avec un data-set interne anonymise et annote selon notre schema JSON
-- augmenter progressivement la qualite des donnees d'entrainement
-- evaluer sur des cas metiers reels avant mise en production
+- source 1 : data-sets publics pour initialiser l'entrainement
+- source 2 : factures internes anonymisees, annotees selon le schema JSON cible
+- gouvernance data : separation obligatoire entrainement/validation/test
+- qualite : validation du modele sur un jeu de test gele representatif du contexte metier
 
 ## Mise en oeuvre retenue
 

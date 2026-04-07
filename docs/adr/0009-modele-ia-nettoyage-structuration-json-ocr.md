@@ -48,11 +48,11 @@ Le composant de post-traitement doit gerer :
 
 ## Decision
 
-**Utilisation d'un modele IA pour nettoyer et restructurer le JSON OCR**
+**Le post-traitement OCR est assure par un modele IA dedie au nettoyage et a la normalisation JSON.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- meilleure qualite de donnees en sortie
-- schema JSON plus coherent pour les services en aval
-- reduction des corrections manuelles
-- adaptation plus rapide a de nouveaux formats de factures
+- composant : modele IA de transformation de donnees OCR
+- entrees : JSON brut issu d'Amazon Textract
+- sorties : JSON normalise selon un schema metier unique (dates, montants, devise, champs obligatoires)
+- role : preparation des donnees avant categorisation, stockage et affichage applicatif

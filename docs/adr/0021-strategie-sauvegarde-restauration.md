@@ -49,11 +49,11 @@ La strategie de backup doit gerer :
 
 ## Decision
 
-**Utilisation de sauvegardes automatisees avec tests periodiques de restauration**
+**La protection des donnees repose sur des sauvegardes automatisees et des tests de restauration planifies.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- securiser les donnees critiques du projet
-- garantir la reprise en cas d'incident
-- reduire les erreurs humaines
-- augmenter la confiance en production
+- sauvegardes : automatisation reguliere pour MongoDB et fichiers PDF sur S3
+- restauration : exercices periodiques documentes avec verification de bout en bout
+- objectifs : respecter les contraintes RPO/RTO definies pour le projet
+- retention : conservation securisee des sauvegardes selon une politique formelle

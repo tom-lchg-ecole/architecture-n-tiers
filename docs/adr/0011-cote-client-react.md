@@ -48,11 +48,11 @@ Le framework front-end doit gerer :
 
 ## Decision
 
-**Utilisation de React pour le cote client**
+**Le client web est developpe avec React et TypeScript.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- forte flexibilite pour construire des interfaces evolutives
-- grande disponibilite de ressources et bibliotheques
-- integration naturelle avec TypeScript
-- bonne maintenabilite du front-end a long terme
+- framework front-end : React
+- langage : TypeScript
+- cible : application web responsive (mobile, tablette, desktop)
+- integration : consommation des APIs REST exposees par Express

@@ -48,11 +48,11 @@ La strategie de deploiement front-end doit gerer :
 
 ## Decision
 
-**Utilisation d'une web app responsive unique pour mobile, tablette et web**
+**Le front-end est deploye sous forme d'une seule web app responsive pour mobile, tablette et desktop.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- reduire la complexite de maintenance
-- accelerer la livraison des evolutions
-- garantir une experience coherente sur tous les ecrans
-- optimiser le cout global de deploiement front-end
+- application : une base de code React unique
+- adaptation ecran : responsive design avec breakpoints
+- diffusion : meme artefact front-end pour tous les supports web
+- maintenance : une seule chaine de build et de deploiement

@@ -50,11 +50,11 @@ Le système de stockage doit gérer :
 
 ## Décision
 
-**Utilisation d'un bucket AWS S3 pour le stockage des fichiers PDF**
+**Les factures PDF sont stockées dans un bucket Amazon S3 dédié au projet.**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- meilleure fiabilité du stockage
-- accès simplifié aux fichiers depuis l'application
-- scalabilité adaptée à l'augmentation des volumes
-- sécurité et contrôle d'accès robustes
+- service de stockage : Amazon S3
+- objet stocké : fichiers PDF originaux des factures
+- sécurité : accès via IAM et URLs signées pour téléchargement/visualisation
+- application : seules les métadonnées et la clé S3 sont conservées en base MongoDB

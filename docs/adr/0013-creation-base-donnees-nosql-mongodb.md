@@ -48,11 +48,11 @@ La base de donnees doit gerer :
 
 ## Decision
 
-**Utilisation de MongoDB comme base NoSQL principale**
+**La base de donnees principale est MongoDB, utilisee comme base NoSQL documentaire.**
 
-Raisons principales :
+Choix retenu de maniere explicite :
 
-- adaptation naturelle aux donnees JSON evolutives
-- rapidite de developpement et d'evolution du schema
-- performances adaptees au cas d'usage documentaire
-- coherence avec l'architecture orientee services du projet
+- SGBD : MongoDB
+- format de stockage : documents BSON (JSON)
+- perimetre : metadonnees facture, resultats OCR/IA, references de fichiers S3
+- schema : flexible mais contraint par des validations applicatives cote backend

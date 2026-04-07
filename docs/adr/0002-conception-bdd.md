@@ -46,12 +46,11 @@ La base de données doit gérer :
 
 ## Décision
 
-**Utilisation de MongoDB**
+**La base de données principale du projet est MongoDB (mode document NoSQL).**
 
-Raisons principales :
+Choix retenu de manière explicite :
 
-- Support JSON
-- Schéma flexible
-- Développement plus rapide
-- Données imbroquées
-- Scalabilité
+- moteur : MongoDB
+- modèle : collections de documents JSON/BSON
+- usage : stockage des métadonnées de factures, données OCR/IA et liens vers PDF
+- accès applicatif : via le backend Express/TypeScript
