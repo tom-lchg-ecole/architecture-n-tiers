@@ -1,0 +1,23 @@
+@startuml
+actor Client
+participant "Router\n(auth.js)" as Router
+participant "Middleware\n(authMiddleware.js)" as Middleware
+participant "Service\n(authService.js)" as Service
+participant "Base de données\n(authDb.js)" as Database
+
+== /register (Création d'utilisateur) ==
+Client -> Router : POST /register {email, password, role, name}
+Router -> Service : createUser(email, password, role, name)
+Service -> Database : db('users').where({email}).first()
+Database --> Service : utilisateur existant ?
+alt utilisateur existe
+Service --> Router : Erreur 409
+Router --> Client : HTTP 409 Conflict
+else utilisateur n'existe pas
+Service -> Service : bcrypt.hash(password)
+Service -> Database : db('users').insert({...})
+Database --> Service : utilisateur créé
+Service --> Router : retour utilisateur créé
+Router --> Client : HTTP 201 Created + utilisateur
+end
+@enduml
