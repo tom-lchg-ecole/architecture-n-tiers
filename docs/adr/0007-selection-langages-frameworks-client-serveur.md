@@ -60,3 +60,10 @@ Choix retenu de manière explicite :
 - framework client : React
 - framework serveur : Express
 - objectif : partage des types et cohérence de la base de code sur toute la stack
+
+## Conséquences
+
+- Le typage statique réduit les erreurs d'intégration entre client et serveur.
+- La vitesse de développement initiale est impactée par la configuration TypeScript.
+- Le maintien d'un contrat de types partagé devient un actif central du projet.
+- La montée en compétence TypeScript est nécessaire pour toute l'équipe.

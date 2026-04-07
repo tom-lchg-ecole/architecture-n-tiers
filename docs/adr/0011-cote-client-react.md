@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - langage : TypeScript
 - cible : application web responsive (mobile, tablette, desktop)
 - integration : consommation des APIs REST exposees par Express
+
+## Consequences
+
+- Le front-end beneficie d'une forte reutilisabilite via les composants React.
+- Le projet doit fixer des conventions de structure pour limiter l'heterogeneite.
+- L'ecosysteme React impose des choix complementaires (routing, etat, formulaires).
+- Les evolutions UI sont plus rapides une fois le socle de composants stabilise.

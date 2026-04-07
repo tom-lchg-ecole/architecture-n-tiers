@@ -56,3 +56,10 @@ Choix retenu de manière explicite :
 - approche UI : single-page application (SPA) responsive
 - structuration : composants partagés (écrans, formulaires, tableaux, filtres)
 - intégration : appels API REST vers le backend Express
+
+## Conséquences
+
+- La navigation est plus fluide, avec une meilleure continuité des parcours utilisateur.
+- La qualité de code dépend d'une architecture de composants claire et partagée.
+- Le référencement SEO natif est moins favorable qu'avec un rendu côté serveur.
+- La dette front-end peut croître vite sans conventions de structure et de state management.

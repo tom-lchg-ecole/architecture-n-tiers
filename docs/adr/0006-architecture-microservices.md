@@ -57,3 +57,10 @@ Choix retenu de manière explicite :
 - communication : API HTTP internes entre services
 - déploiement : chaque service versionné et déployé séparément
 - données : MongoDB et S3 partagés via contrats d'accès définis
+
+## Conséquences
+
+- Les services peuvent évoluer et se déployer indépendamment selon les besoins métier.
+- La complexité opérationnelle augmente (observabilité, orchestration, contrats inter-services).
+- La robustesse dépend de la qualité des interfaces et de la gestion des erreurs réseau.
+- L'équipe doit maintenir des standards transverses (auth, logs, tracing, versioning API).

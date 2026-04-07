@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - entrees : JSON brut issu d'Amazon Textract
 - sorties : JSON normalise selon un schema metier unique (dates, montants, devise, champs obligatoires)
 - role : preparation des donnees avant categorisation, stockage et affichage applicatif
+
+## Consequences
+
+- La qualite des donnees aval s'ameliore grace a une normalisation uniforme.
+- Une etape de validation metier reste necessaire pour detecter les erreurs de transformation.
+- Le composant IA ajoute un point de complexite et de supervision supplementaire.
+- Les schemas cibles doivent etre versionnes pour eviter les ruptures entre services.

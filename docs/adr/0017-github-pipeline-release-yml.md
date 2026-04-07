@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - fichier de workflow : `.github/workflows/release.yml`
 - declenchement : publication depuis un tag/version Git
 - resultat : creation de release GitHub et publication des artefacts associes
+
+## Consequences
+
+- Le versioning et la publication deviennent coherents et auditables.
+- L'equipe doit respecter une discipline stricte sur les tags et conventions de release.
+- Les erreurs de configuration du workflow impactent directement la diffusion des versions.
+- La production des artefacts est standardisee et plus fiable dans le temps.

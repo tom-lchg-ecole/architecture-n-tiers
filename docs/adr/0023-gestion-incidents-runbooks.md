@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - pilotage incident : qualification, priorisation, escalation et communication
 - cloture : post-mortem systematique avec plan d'actions
 - capitalisation : mise a jour continue de la documentation d'exploitation
+
+## Consequences
+
+- Le traitement des incidents devient plus rapide et plus coherent entre intervenants.
+- Le maintien des runbooks et post-mortems exige une discipline operationnelle continue.
+- L'equipe capitalise mieux les apprentissages et reduit les recurrences d'incidents.
+- Les roles et responsabilites en astreinte doivent etre clairement definis.

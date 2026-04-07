@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - restauration : exercices periodiques documentes avec verification de bout en bout
 - objectifs : respecter les contraintes RPO/RTO definies pour le projet
 - retention : conservation securisee des sauvegardes selon une politique formelle
+
+## Consequences
+
+- Le risque de perte de donnees est reduit avec une reprise testee.
+- Le projet doit assumer des couts de stockage et d'automatisation supplementaires.
+- Les exercices de restauration deviennent obligatoires pour valider le dispositif.
+- Les objectifs RPO/RTO doivent etre suivis et reevalues avec la croissance du systeme.

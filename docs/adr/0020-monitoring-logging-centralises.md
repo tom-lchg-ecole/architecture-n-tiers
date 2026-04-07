@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - donnees collectees : logs applicatifs, metriques techniques, erreurs
 - exploitation : tableaux de bord et alertes centralises
 - objectif operationnel : detection rapide des incidents et diagnostic unifie
+
+## Consequences
+
+- La detection d'incidents et le diagnostic deviennent plus rapides.
+- Les couts et la complexite de la plateforme d'observabilite augmentent.
+- Les equipes doivent definir des standards de logs, metriques et alertes.
+- La qualite de supervision depend de la couverture effective des instrumentations.

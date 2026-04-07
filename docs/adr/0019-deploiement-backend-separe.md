@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - scalabilite : backend ajustable independamment selon la charge API/OCR/IA
 - exploitation : supervision backend dediee (logs, metriques, alertes)
 - securite : configuration reseau et secrets backend isoles du front-end
+
+## Consequences
+
+- Les cycles de livraison front et back deviennent independants.
+- L'infrastructure et l'exploitation sont plus complexes a orchestrer.
+- Les incidents backend impactent moins directement la diffusion front-end.
+- La communication reseau et la securisation inter-composants doivent etre rigoureusement gerees.

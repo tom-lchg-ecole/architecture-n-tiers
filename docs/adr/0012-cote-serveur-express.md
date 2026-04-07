@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - langage : TypeScript
 - style d'API : REST
 - responsabilites : orchestration OCR/IA, acces MongoDB, acces S3, authentification JWT
+
+## Consequences
+
+- Le socle backend est rapide a demarrer et flexible pour iterer.
+- L'equipe doit imposer sa propre structure pour eviter la derive architecturale.
+- Les middlewares (auth, validation, erreurs) deviennent des pieces critiques communes.
+- La maintenabilite depend de standards de code et de tests bien appliques.

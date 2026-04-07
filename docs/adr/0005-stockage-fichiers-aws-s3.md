@@ -58,3 +58,10 @@ Choix retenu de manière explicite :
 - objet stocké : fichiers PDF originaux des factures
 - sécurité : accès via IAM et URLs signées pour téléchargement/visualisation
 - application : seules les métadonnées et la clé S3 sont conservées en base MongoDB
+
+## Conséquences
+
+- La durabilité et la scalabilité du stockage sont renforcées pour accompagner la croissance.
+- Le système dépend d'AWS et des coûts variables associés au volume et aux accès.
+- La sécurité des accès impose une gestion stricte des permissions IAM et des URLs signées.
+- Les workflows applicatifs doivent gérer explicitement la relation MongoDB (métadonnées) / S3 (fichier).

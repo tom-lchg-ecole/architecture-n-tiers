@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - fichier de workflow : `.github/workflows/deploy.yml`
 - etapes minimales : build, tests, puis deploiement cible
 - securite : secrets de deploiement geres dans GitHub Secrets
+
+## Consequences
+
+- Les deploiements deviennent plus reproductibles et moins dependants des operations manuelles.
+- Une panne du pipeline ou une mauvaise configuration peut bloquer les livraisons.
+- La gestion des secrets et des permissions GitHub devient un point de securite majeur.
+- Les modifications d'infrastructure doivent etre synchronisees avec les workflows CI/CD.

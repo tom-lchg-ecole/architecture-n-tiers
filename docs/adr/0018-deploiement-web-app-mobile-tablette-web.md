@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - adaptation ecran : responsive design avec breakpoints
 - diffusion : meme artefact front-end pour tous les supports web
 - maintenance : une seule chaine de build et de deploiement
+
+## Consequences
+
+- La maintenance front-end est simplifiee avec une seule base de code.
+- L'experience mobile depend fortement de la qualite du responsive design.
+- Les mises a jour sont diffusees plus vite sur tous les supports web.
+- Certains usages mobiles avances peuvent necessiter des adaptations specifiques.

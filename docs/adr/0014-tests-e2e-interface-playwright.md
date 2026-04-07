@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - parcours couverts : upload facture, consultation, recherche, telechargement
 - execution : automatique dans GitHub Actions
 - diagnostic : traces, captures d'ecran et videos en cas d'echec
+
+## Consequences
+
+- Les parcours critiques sont verifies automatiquement avant livraison.
+- Le temps d'execution CI augmente et doit etre optimise pour garder un feedback rapide.
+- La fiabilite des tests depend de bonnes pratiques anti-flaky.
+- Les artefacts Playwright facilitent fortement le diagnostic des regressions UI.

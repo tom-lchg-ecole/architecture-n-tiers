@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - format de stockage : documents BSON (JSON)
 - perimetre : metadonnees facture, resultats OCR/IA, references de fichiers S3
 - schema : flexible mais contraint par des validations applicatives cote backend
+
+## Consequences
+
+- Les donnees variables OCR/IA sont mieux prises en charge grace au schema flexible.
+- Le controle de qualite des donnees repose davantage sur l'application que sur le SGBD.
+- Les performances exigent une strategie d'indexation adaptee aux requetes reelles.
+- Les evolutions de modelisation sont plus rapides mais doivent rester gouvernees.

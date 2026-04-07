@@ -54,3 +54,10 @@ Choix retenu de manière explicite :
 - modèle : collections de documents JSON/BSON
 - usage : stockage des métadonnées de factures, données OCR/IA et liens vers PDF
 - accès applicatif : via le backend Express/TypeScript
+
+## Conséquences
+
+- Le modèle documentaire simplifie l'évolution des champs OCR/IA sans migration SQL lourde.
+- La cohérence des données dépend davantage des validations applicatives et des contrats d'API.
+- Les requêtes analytiques complexes demandent une modélisation et une indexation MongoDB rigoureuses.
+- L'équipe doit maîtriser les bonnes pratiques MongoDB (index, schémas, volumétrie).

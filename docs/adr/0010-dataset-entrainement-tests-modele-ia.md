@@ -57,6 +57,13 @@ Choix retenu de maniere explicite :
 - gouvernance data : separation obligatoire entrainement/validation/test
 - qualite : validation du modele sur un jeu de test gele representatif du contexte metier
 
+## Consequences
+
+- Le modele gagne en robustesse grace a des donnees mieux alignees au contexte reel.
+- Un effort recurrent est requis pour anonymiser, annoter et valider les jeux internes.
+- La qualite des predictions devient mesurable via des metriques et seuils explicites.
+- La gouvernance des donnees devient une responsabilite continue du projet.
+
 ## Mise en oeuvre retenue
 
 Sources de data-set :

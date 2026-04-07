@@ -1,4 +1,4 @@
-# ADR : Authentification
+# ADR-25 : Authentification
 
 ## Date
 
@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - gestion de session : refresh token pour renouveler les access tokens
 - autorisation : controle d'acces par role (administrateur, utilisateur)
 - transport : token transmis dans les appels API REST securises
+
+## Consequences
+
+- L'authentification s'aligne bien avec une API REST et des clients multiplateformes.
+- La revocation et la rotation des tokens doivent etre traitees explicitement.
+- La surface de risque impose une gestion stricte des secrets de signature et des durees de vie.
+- Les controles RBAC doivent etre testes et appliques sur tous les endpoints sensibles.

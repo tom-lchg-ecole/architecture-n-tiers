@@ -56,3 +56,10 @@ Choix retenu de manière explicite :
 - périmètre : extraction texte et champs depuis PDF natifs ou scannés
 - sortie : données OCR structurées au format JSON
 - intégration : traitement en entrée du pipeline IA et stockage des PDF sur S3
+
+## Conséquences
+
+- La qualité d'extraction s'améliore sur les factures variées, y compris scannées.
+- Le projet dépend du service AWS Textract et de sa tarification à l'usage.
+- Un contrôle qualité des sorties OCR reste nécessaire sur les cas ambigus.
+- Le pipeline doit gérer les erreurs OCR et les documents non exploitables.

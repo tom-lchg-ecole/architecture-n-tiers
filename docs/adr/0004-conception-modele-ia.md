@@ -56,3 +56,10 @@ Choix retenu de manière explicite :
 - entrée : texte extrait des factures (pipeline OCR)
 - sortie : catégorie métier prédite pour chaque facture
 - cycle de vie : entraînement initial + réentraînements sur données internes validées
+
+## Conséquences
+
+- La performance du modèle dépend directement de la qualité et de la représentativité des données annotées.
+- Un processus MLOps est nécessaire pour suivre les versions, métriques et réentraînements.
+- Les erreurs de classification restent possibles et imposent un mécanisme de correction métier.
+- Le coût d'exploitation augmente avec les besoins d'entraînement et de validation continue.

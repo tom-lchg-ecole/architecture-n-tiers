@@ -56,3 +56,10 @@ Choix retenu de maniere explicite :
 - principe : isolation des dependances externes avec mocks
 - execution : locale et dans le pipeline CI
 - objectif : proteger la logique metier avant tests d'integration et E2E
+
+## Consequences
+
+- Les regressions metier sont detectees plus tot et avec un diagnostic plus precis.
+- La maintenance des tests et des mocks devient un effort permanent.
+- Les PR serveur gagnent en securite avant integration.
+- La couverture de tests doit etre suivie pour eviter les zones non protegees.

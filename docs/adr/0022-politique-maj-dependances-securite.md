@@ -57,3 +57,10 @@ Choix retenu de maniere explicite :
 - securite : scans automatiques de vulnerabilites (npm audit / outils GitHub)
 - priorisation : correctifs critiques traites en priorite
 - validation : execution des tests avant fusion de toute mise a jour
+
+## Consequences
+
+- L'exposition aux vulnerabilites diminue grace a une maintenance proactive.
+- Une charge recurrente de maintenance est ajoutee dans le cycle projet.
+- Les mises a jour deviennent plus progressives et moins risquées.
+- La stabilite depend du respect de la politique et de l'automatisation des controles.
