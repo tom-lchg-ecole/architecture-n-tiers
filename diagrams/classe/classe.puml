@@ -1,0 +1,38 @@
+@startuml
+
+class User {
+    +id
+    +email
+    +passwordHash
+    +role
+    +name
+    +createdAt
+
+}
+class UserAuth {
+    +isLogged()
+    +login()
+    +register()
+    +logout()
+    +insertUser()
+    +findUser()
+}
+class Document {
+    +id
+    +name
+    +type
+    +dateUpload
+    +status
+    +createdAt
+    +updatedAt
+    +updateDocument()
+    +markAsProcessed()
+    +archive()
+    +uploadDocument()
+    +deleteDocument()
+}
+
+User --> Document
+UserAuth --> User
+
+@enduml
