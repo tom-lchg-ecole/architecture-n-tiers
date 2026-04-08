@@ -50,18 +50,22 @@ Le système de stockage doit gérer :
 
 ## Décision
 
-**Les documents PDF (factures, devis, etc.) sont stockés dans un bucket Amazon S3 dédié au projet.**
+**Le stockage Amazon S3 est organisé en data lake avec 3 zones : Raw_zone (bronze), cruated_zone (silver) et clean_zone (gold).**
 
 Choix retenu de manière explicite :
 
-- service de stockage : Amazon S3
-- objet stocké : fichiers PDF originaux des documents traités
+- service de stockage : Amazon S3 (data lake)
+- zones :
+  - Raw_zone (bronze) : PDF bruts déposés par l'application
+  - cruated_zone (silver) : données OCR structurées intermédiaires
+  - clean_zone (gold) : données nettoyées et prêtes à l'exploitation
 - sécurité : accès via IAM et URLs signées pour téléchargement/visualisation
 - application : seules les métadonnées et la clé S3 sont conservées en base MongoDB
 
 ## Conséquences
 
 - La durabilité et la scalabilité du stockage sont renforcées pour accompagner la croissance.
+- L'organisation en zones bronze/silver/gold clarifie le cycle de vie de la donnée documentaire.
 - Le système dépend d'AWS et des coûts variables associés au volume et aux accès.
 - La sécurité des accès impose une gestion stricte des permissions IAM et des URLs signées.
 - Les workflows applicatifs doivent gérer explicitement la relation MongoDB (métadonnées) / S3 (fichier).

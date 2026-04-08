@@ -53,7 +53,7 @@ Le composant de post-traitement doit gerer :
 Choix retenu de maniere explicite :
 
 - composant : modele IA de transformation de donnees OCR
-- entrees : JSON brut issu d'Amazon Textract
+- entrees : JSON brut issu de Tesseract OCR
 - sorties : JSON normalise selon un schema metier unique (dates, montants, devise, champs obligatoires)
 - role : preparation des donnees avant categorisation, stockage et affichage applicatif
 

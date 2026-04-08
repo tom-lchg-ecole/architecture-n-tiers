@@ -48,18 +48,22 @@ La solution OCR doit gérer :
 
 ## Décision
 
-**L'OCR des documents PDF (factures, devis, etc.) est réalisé avec Amazon Textract.**
+**L'OCR des documents PDF (factures, devis, etc.) est réalisé avec Tesseract OCR.**
 
 Choix retenu de manière explicite :
 
-- service OCR : Amazon Textract
+- service OCR : Tesseract OCR
 - périmètre : extraction texte et champs depuis PDF natifs ou scannés
 - sortie : données OCR structurées au format JSON
-- intégration : traitement en entrée du pipeline IA et stockage des PDF sur S3
+- intégration :
+  - Tesseract n'accède jamais directement au bucket S3
+  - l'API orchestre l'extraction OCR depuis le PDF puis la communication avec S3
+  - traitement en entrée du pipeline IA après extraction
 
 ## Conséquences
 
-- La qualité d'extraction s'améliore sur des documents PDF variés, y compris scannés.
-- Le projet dépend du service AWS Textract et de sa tarification à l'usage.
+- Le composant OCR reste découplé du stockage objet S3.
+- L'API devient le point unique de communication avec S3 pour le flux OCR.
+- La qualité d'extraction dépend de la configuration Tesseract et de la qualité des scans.
 - Un contrôle qualité des sorties OCR reste nécessaire sur les cas ambigus.
 - Le pipeline doit gérer les erreurs OCR et les documents non exploitables.
