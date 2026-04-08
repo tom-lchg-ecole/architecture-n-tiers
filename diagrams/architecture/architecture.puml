@@ -1,0 +1,76 @@
+' ANCIENNE VERSION
+@startuml architecture-4-tiers
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+
+skinparam rectangle {
+    BorderColor #555
+    FontColor #222
+}
+
+skinparam component {
+    BorderColor #555
+    FontColor #222
+}
+
+title Architecture 4-Tiers — Gestion de documents PDF
+
+' ─────────────────────────────────────────
+' TIER 1 : Présentation
+' ─────────────────────────────────────────
+package "Tier 1 — Présentation" #E8F4FD {
+    component "[React + TypeScript]\nInterface Web" as UI {
+        component "Upload PDF\n(drag & drop)" as Upload
+        component "Consultation /\nRecherche" as Consult
+        component "Gestion des rôles\n(Admin / Utilisateur)" as RoleUI
+    }
+}
+
+' ─────────────────────────────────────────
+' TIER 2 : API / Logique métier
+' ─────────────────────────────────────────
+package "Tier 2 — API / Logique métier" #EAF7EA {
+    component "[Express + TypeScript]\nAPI REST" as API {
+        component "Auth Middleware\n(JWT / RBAC)" as Auth
+        component "Document Service\n(CRUD PDF)" as DocService
+        component "Orchestrateur\nOCR / IA" as Orchestrator
+    }
+}
+
+' ─────────────────────────────────────────
+' TIER 3 : Services spécialisés
+' ─────────────────────────────────────────
+package "Tier 3 — Services spécialisés" #FEF9E7 {
+    component "[AWS Textract]\nService OCR" as OCR
+    component "[Modèle ML supervisé]\nService IA / Catégorisation" as AI
+}
+
+' ─────────────────────────────────────────
+' TIER 4 : Données & Stockage
+' ─────────────────────────────────────────
+package "Tier 4 — Données & Stockage" #FDF0F0 {
+    database "[MongoDB]\nMétadonnées, OCR, résultats IA" as Mongo
+    storage "[AWS S3]\nFichiers PDF originaux" as S3
+}
+
+' ─────────────────────────────────────────
+' Relations
+' ─────────────────────────────────────────
+
+UI --> API : HTTPS — REST\n(access token JWT)
+
+UI --> Auth : validation token\n& contrôle rôle
+
+S3 <--> DocService    : upload / download(URLs signées IAM (bronze))
+DocService <--> Mongo : lecture / écriture métadonnées
+
+Orchestrator --> OCR  : envoi PDF\n(HTTP interne sans fichier, juste URL vers bronze)
+Orchestrator --> AI   : texte extrait\n(HTTP interne)
+Orchestrator --> Mongo : sauvegarde résultats\nOCR + catégorie IA
+
+OCR --> S3 : lecture PDF\n(AWS SDK (bronze puis argent))
+AI  --> Mongo : lecture historique\n(réentraînement)
+
+@enduml

@@ -1,0 +1,135 @@
+@startuml architecture-n-tiers
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam padding 8
+skinparam nodesep 50
+skinparam ranksep 60
+
+skinparam component {
+    BorderColor #555
+    FontColor #222
+    BackgroundColor White
+}
+skinparam database {
+    BorderColor #555
+    FontColor #222
+    BackgroundColor White
+}
+skinparam storage {
+    BorderColor #555
+    FontColor #222
+    BackgroundColor White
+}
+skinparam package {
+    BorderColor #888
+    FontColor #333
+    FontStyle bold
+}
+
+title Architecture N-Tiers — Gestion de documents PDF
+
+' ─────────────────────────────────────────
+' TIER 1 : Présentation
+' ─────────────────────────────────────────
+package "Tier 1 — Présentation" #E8F4FD {
+    component "Upload PDF\n(drag & drop / lot)" as Upload
+    component "Consultation /\nRecherche / Filtrage" as Consult
+    component "Visualisation &\nTéléchargement PDF" as View
+    component "Gestion des rôles\n(Admin / Utilisateur)" as RoleUI
+
+    note as NoteUI
+      React + TypeScript
+      SPA Responsive
+      (mobile / tablette / desktop)
+    end note
+}
+
+' ─────────────────────────────────────────
+' TIER 2 : API / Logique métier
+' ─────────────────────────────────────────
+package "Tier 2 — API / Logique métier" #EAF7EA {
+    component "Auth Middleware\n(JWT / RBAC)" as Auth
+    component "Document Service\n(CRUD PDF)" as DocService
+    component "Orchestrateur\nOCR / IA" as Orchestrator
+
+    note as NoteAPI
+      Express + TypeScript
+      API REST
+    end note
+}
+
+' ─────────────────────────────────────────
+' TIER 3 : Services spécialisés
+' ─────────────────────────────────────────
+package "Tier 3 — Services spécialisés" #FEF9E7 {
+    component "Tesseract OCR\n(extraction texte PDF)" as OCR
+    component "IA Nettoyage &\nNormalisation JSON" as AICleaning
+    component "IA Catégorisation\n(facture, devis…)" as AICateg
+
+    note as NoteIA
+      Modèles ML supervisés
+      open source
+    end note
+}
+
+' ─────────────────────────────────────────
+' TIER 4 : Données & Stockage
+' ─────────────────────────────────────────
+package "Tier 4 — Données & Stockage" #FDF0F0 {
+    database "MongoDB\n──────────────\nMétadonnées documents\nRésultats OCR / IA\nRéférences S3" as Mongo
+
+    package "AWS S3 — Data Lake" #FDE8D8 {
+        storage "Raw Zone (Bronze)\nPDF bruts" as S3Raw
+        storage "Curated Zone (Silver)\nDonnées OCR\nstructurées" as S3Silver
+        storage "Clean Zone (Gold)\nDonnées finales\nprêtes à l'exploitation" as S3Gold
+    }
+}
+
+' ─────────────────────────────────────────
+' Layout hints (flèches cachées)
+' ─────────────────────────────────────────
+Upload   -[hidden]r-> Consult
+Consult  -[hidden]r-> View
+View     -[hidden]r-> RoleUI
+
+Auth -[hidden]r-> DocService
+DocService -[hidden]r-> Orchestrator
+
+OCR -[hidden]r-> AICleaning
+AICleaning -[hidden]r-> AICateg
+
+S3Raw -[hidden]r-> S3Silver
+S3Silver -[hidden]r-> S3Gold
+
+' ─────────────────────────────────────────
+' Relations fonctionnelles
+' ─────────────────────────────────────────
+
+' Tier 1 → Tier 2
+Upload    --> DocService  : HTTPS REST\n(Bearer JWT)
+Consult   --> DocService  : HTTPS REST\n(Bearer JWT)
+View      --> DocService  : HTTPS REST\n(Bearer JWT)
+RoleUI    --> Auth        : HTTPS REST\n(Bearer JWT)
+
+' Tier 2 → Tier 4 (upload & création)
+DocService --> S3Raw      : upload PDF brut\n(AWS SDK / IAM)
+DocService --> Mongo      : CRUD métadonnées
+DocService <-- S3Raw      : download PDF\n(URLs signées IAM)
+
+' Tier 2 → Tier 3 (pipeline OCR/IA)
+Orchestrator --> OCR       : contenu PDF\n(extrait par l'API)
+Orchestrator --> S3Raw     : lecture PDF 
+OCR          --> AICleaning : JSON brut OCR
+AICleaning   --> AICateg   : JSON normalisé\n(dates, montants…)
+
+' Tier 3 → Tier 4 (stockage résultats)
+Orchestrator --> S3Silver  : stockage OCR\nintermédiaire
+Orchestrator --> S3Gold    : données nettoyées\n& normalisées
+Orchestrator --> Mongo     : métadonnées +\ncatégorie + clés S3
+
+' Réentraînement modèle
+AICateg --> Mongo          : lecture historique\n(réentraînement)
+
+@enduml
