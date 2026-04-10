@@ -1,0 +1,73 @@
+@startuml cluster-mongodb
+!theme plain
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam nodesep 60
+skinparam ranksep 70
+
+skinparam component {
+    BorderColor #555
+    FontColor #222
+    BackgroundColor White
+}
+skinparam database {
+    BorderColor #555
+    FontColor #222
+    BackgroundColor White
+}
+skinparam node {
+    BorderColor #555
+    FontColor #222
+}
+
+title Cluster MongoDB — Replica Set Actif-Passif (3 nœuds)
+
+package "Tier 2 — Backend Express" #EAF7EA {
+    component "API Express\n(driver MongoDB)" as App
+}
+package "MongoDB Replica Set" #FDF0F0 {
+
+    node "mongo-primary\nPrimary\n[Priority: 2 | Votes: 1]" as Primary #FFD6D6
+
+    node "mongo-secondary-1\nSecondary\n[Priority: 1 | Votes: 1]" as Secondary1 #D6F5D6
+
+    node "mongo-secondary-2\nSecondary\n[Priority: 1 | Votes: 1]" as Secondary2 #D6F5D6
+}
+
+
+package "AWS S3 — Backup" #FDE8D8 {
+    storage "Bucket backup\nmongodump (rétention 30j)" as S3Backup
+}
+
+
+App --> Primary       : Écriture\n(writeConcern: majority)
+
+App --> Primary       : Lecture critique\n(readPreference: primary)
+App --> Secondary1    : Lecture non critique\n(readPreference: secondaryPreferred)
+App --> Secondary2    : Reporting / Admin\n(readPreference: secondary)
+
+Primary --> Secondary1 : Réplication oplog\n(asynchrone)
+Primary --> Secondary2 : Réplication oplog\n(asynchrone)
+
+Primary <..> Secondary1 : heartbeat (2 s)
+Primary <..> Secondary2 : heartbeat (2 s)
+Secondary1 <..> Secondary2 : heartbeat (2 s)
+
+Secondary2 --> S3Backup : mongodump\n(toutes les 24 h)
+note bottom of Primary
+  En cas de panne :
+  • Heartbeat timeout → 10 s
+  • Élection automatique
+  • Basculement < 30 s
+  • Driver MongoDB reconnecte
+end note
+
+note right of Secondary1
+  writeConcern majority :
+  écriture confirmée dès
+  que Primary + 1 Secondary
+  ont persisté l'opération
+end note
+
+@enduml
