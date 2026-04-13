@@ -88,7 +88,7 @@ Le dossier [`diagrams/`](diagrams/) contient des diagrammes **PlantUML** (`.puml
 |---------|---------|--------|
 | [`diagrams/architecture/architecture-n-tiers.puml`](diagrams/architecture/architecture-n-tiers.puml) | Architecture **n-tiers** globale de l’application. | ![architecture](diagrams/architecture/architecture-n-tiers.png) |
 | [`diagrams/cluster/cluster-mongodb.puml`](diagrams/cluster/cluster-mongodb.puml) | Cluster **MongoDB** — réplication et haute disponibilité. | ![cluster mongodb](diagrams/cluster/cluster-mongodb.png) |
-| [`diagrams/usecase.puml`](diagrams/usecase.puml) | Cas d’usage : authentification, gestion des documents, recherche / filtres, administration. | — |
+| [`diagrams/usecase.puml`](diagrams/usecase.puml) | Cas d’usage : authentification, gestion des documents, recherche / filtres, administration. | ![diagramme usecase](diagrams/usecase.png) |
 | [`diagrams/sequence/send_file.puml`](diagrams/sequence/send_file.puml) | Séquence **téléversement + OCR + IA + persistance** (flux principal). | ![sequence send file](diagrams/sequence/sequence.png) |
 | [`diagrams/sequence/register.puml`](diagrams/sequence/register.puml) | Séquence d’**inscription** utilisateur. | ![sequence register](diagrams/sequence/register.png) |
 | [`diagrams/classe/classe.puml`](diagrams/classe/classe.puml) | Diagramme de **classes** du domaine. | ![diagramme de classes](diagrams/classe/classe.png) |
