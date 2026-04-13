@@ -1,0 +1,68 @@
+@startuml MLD NoSQL - Pipeline Documentaire
+
+left to right direction
+
+skinparam class {
+  BackgroundColor White
+  HeaderBackgroundColor #80aad7ff
+  HeaderFontColor White
+  BorderColor #1a3a5c
+  FontSize 12
+}
+
+class Batch {
+  + id : ObjectId <<PK>>
+  --
+  pipelineStatus : String
+  documents : Object
+  extraction : Object
+  validation : Object
+  createdAt : Date
+}
+
+class Bronze {
+  + id : ObjectId <<PK>>
+  --
+  awsName : String
+  awsUrl : String
+  filename : String
+  mimeType : String
+  size : Number
+  ocrText : String
+  detectedLanguage : String
+  fileData : String
+  detectedType : String
+  uploadedAt : Date
+  document_id : ObjectId
+  batch_id : ObjectId <<FK>>
+}
+
+class Silver {
+  + id : ObjectId <<PK>>
+  --
+  filename : String
+  ocrText : String
+  processedAt : Date
+  bronze_id : ObjectId <<FK>>
+}
+
+class Gold {
+  + id : ObjectId <<PK>>
+  --
+  filename : String
+  documentType : String
+  ocrText : String
+  typeLabel : String
+  confidence : Number
+  fields : Object
+  anomalies : Object
+  sireneEnrichment : Object
+  curatedAt : Date
+  silver_id : ObjectId <<FK>>
+}
+
+Batch -->  Bronze : fk_batch_id_bronze
+Bronze  -->  Silver : fk_bronze_id_silver
+Silver --> Gold : fk_silver_id_gold
+
+@enduml

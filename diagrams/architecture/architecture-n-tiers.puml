@@ -33,51 +33,35 @@ title Architecture N-Tiers — Gestion de documents PDF
 ' ─────────────────────────────────────────
 ' TIER 1 : Présentation
 ' ─────────────────────────────────────────
-package "Tier 1 — Présentation" #E8F4FD {
+package "UI (React + TypeScript)" #E8F4FD {
     component "Upload PDF\n(drag & drop / lot)" as Upload
     component "Consultation /\nRecherche / Filtrage" as Consult
     component "Visualisation &\nTéléchargement PDF" as View
     component "Gestion des rôles\n(Admin / Utilisateur)" as RoleUI
-
-    note as NoteUI
-      React + TypeScript
-      SPA Responsive
-      (mobile / tablette / desktop)
-    end note
 }
 
 ' ─────────────────────────────────────────
 ' TIER 2 : API / Logique métier
 ' ─────────────────────────────────────────
-package "Tier 2 — API / Logique métier" #EAF7EA {
+package "API REST (Express + TypeScript)" #EAF7EA {
     component "Auth Middleware\n(JWT / RBAC)" as Auth
     component "Document Service\n(CRUD PDF)" as DocService
     component "Orchestrateur\nOCR / IA" as Orchestrator
-
-    note as NoteAPI
-      Express + TypeScript
-      API REST
-    end note
 }
 
 ' ─────────────────────────────────────────
 ' TIER 3 : Services spécialisés
 ' ─────────────────────────────────────────
-package "Tier 3 — Services spécialisés" #FEF9E7 {
+package "Pipeline IA" #FEF9E7 {
     component "Tesseract OCR\n(extraction texte PDF)" as OCR
     component "IA Nettoyage &\nNormalisation JSON" as AICleaning
     component "IA Catégorisation\n(facture, devis…)" as AICateg
-
-    note as NoteIA
-      Modèles ML supervisés
-      open source
-    end note
 }
 
 ' ─────────────────────────────────────────
 ' TIER 4 : Données & Stockage
 ' ─────────────────────────────────────────
-package "Tier 4 — Données & Stockage" #FDF0F0 {
+package "Base de données et stockage" #FDF0F0 {
     database "MongoDB\n──────────────\nMétadonnées documents\nRésultats OCR / IA\nRéférences S3" as Mongo
 
     package "AWS S3 — Data Lake" #FDE8D8 {

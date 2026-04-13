@@ -84,14 +84,24 @@ sequenceDiagram
 
 Le dossier [`diagrams/`](diagrams/) contient des diagrammes **PlantUML** (`.puml`) :
 
-| Fichier | Contenu |
-|---------|---------|
-| [`diagrams/usecase.puml`](diagrams/usecase.puml) | Cas d’usage : authentification, gestion des documents, recherche / filtres, administration. |
-| [`diagrams/sequence/send_file.puml`](diagrams/sequence/send_file.puml) | Séquence **téléversement + OCR + IA + persistance** (flux principal). |
-| [`diagrams/sequence/register.puml`](diagrams/sequence/register.puml) | Séquence d’**inscription** utilisateur. |
-| [`diagrams/classe/classe.puml`](diagrams/classe/classe.puml) | Diagramme de **classes** du domaine. |
+| Fichier | Contenu | Aperçu |
+|---------|---------|--------|
+| [`diagrams/architecture/architecture-n-tiers.puml`](diagrams/architecture/architecture-n-tiers.puml) | Architecture **n-tiers** globale de l’application. | ![architecture](diagrams/architecture/architecture-n-tiers.png) |
+| [`diagrams/cluster/cluster-mongodb.puml`](diagrams/cluster/cluster-mongodb.puml) | Cluster **MongoDB** — réplication et haute disponibilité. | ![cluster mongodb](diagrams/cluster/cluster-mongodb.png) |
+| [`diagrams/usecase.puml`](diagrams/usecase.puml) | Cas d’usage : authentification, gestion des documents, recherche / filtres, administration. | — |
+| [`diagrams/sequence/send_file.puml`](diagrams/sequence/send_file.puml) | Séquence **téléversement + OCR + IA + persistance** (flux principal). | ![sequence send file](diagrams/sequence/sequence.png) |
+| [`diagrams/sequence/register.puml`](diagrams/sequence/register.puml) | Séquence d’**inscription** utilisateur. | ![sequence register](diagrams/sequence/register.png) |
+| [`diagrams/classe/classe.puml`](diagrams/classe/classe.puml) | Diagramme de **classes** du domaine. | ![diagramme de classes](diagrams/classe/classe.png) |
 
-Pour les visualiser : extension PlantUML dans l’éditeur, ou outil en ligne / CLI PlantUML selon votre environnement.
+### Modélisation Merise (`diagrams/merise/`)
+
+| Niveau | Fichier | Aperçu |
+|--------|---------|--------|
+| **MCD** — Modèle Conceptuel de Données | [`diagrams/merise/MCD/`](diagrams/merise/MCD/) | ![MCD](diagrams/merise/MCD/Capture%20d’écran%202026-04-09%20à%2017.00.56.png) |
+| **MLD** — Modèle Logique de Données | [`diagrams/merise/MLD/`](diagrams/merise/MLD/) | ![MLD](diagrams/merise/MLD/Capture%20d’écran%202026-04-09%20à%2017.01.01.png) |
+| **MPD** — Modèle Physique de Données | [`diagrams/merise/MPD/`](diagrams/merise/MPD/) | ![MPD](diagrams/merise/MPD/image.png) |
+
+Pour les diagrammes PlantUML : extension PlantUML dans l’éditeur, ou outil en ligne / CLI PlantUML selon votre environnement.
 
 ---
 
