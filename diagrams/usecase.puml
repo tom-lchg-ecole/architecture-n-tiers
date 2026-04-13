@@ -18,9 +18,9 @@ rectangle "Système de gestion de documents" {
         usecase "Téléverser un document" as UC_Upload
         usecase "Téléverser en lot" as UC_BatchUpload
         usecase "Consulter la liste des documents" as UC_ListInvoices
-        usecase "Consulter le détail d'une documents" as UC_ViewDetail
-        usecase "Modifier une documents" as UC_UpdateInvoice
-        usecase "Supprimer une documents" as UC_DeleteInvoice
+        usecase "Consulter le détail d'un document" as UC_ViewDetail
+        usecase "Modifier un document" as UC_UpdateInvoice
+        usecase "Supprimer un document" as UC_DeleteInvoice
         usecase "Télécharger le PDF" as UC_DownloadPDF
         usecase "Prévisualiser le PDF" as UC_PreviewPDF
     }
